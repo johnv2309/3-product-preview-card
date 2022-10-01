@@ -1,0 +1,135 @@
+:root {
+  /* Primary colors */
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Neutral colors */
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+  background-color: var(--very-light-gray);
+  display: grid;
+  place-items: center;
+}
+
+main {
+  height: 500px;
+  width: 730px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+article {
+  color: var(--very-light-gray);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+article:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+article:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+img {
+  height: auto;
+  width: 4rem;
+}
+
+h1 {
+  font-family: "Big Shoulders Display";
+  font-size: 3rem;
+  padding: 1rem 0;
+}
+
+p {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+button {
+  background-color: var(--very-light-gray);
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.75rem;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: transparent;
+  outline: 1px solid var(--very-light-gray);
+}
+
+.sedan {
+  background-color: var(--bright-orange);
+}
+
+.sedan button {
+  color: var(--bright-orange);
+}
+
+.sedan button:hover {
+  color: var(--very-light-gray);
+}
+
+.suv {
+  background-color: var(--dark-cyan);
+}
+
+.suv button {
+  color: var(--dark-cyan);
+}
+
+.suv button:hover {
+  color: var(--very-light-gray);
+}
+
+.luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.luxury button {
+  color: var(--very-dark-cyan);
+}
+
+.luxury button:hover {
+  color: var(--very-light-gray);
+}
+
+@media (max-width: 720px) {
+  main {
+    height: 100%;
+    width: 315px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 4.5rem 0;
+  }
+
+  button {
+    margin-top: 3rem;
+  }
+
+  article:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+
+  article:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+}
